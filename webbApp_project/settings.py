@@ -27,6 +27,7 @@ DEBUG = env.list("DEBUG")
 
 
 ALLOWED_HOSTS = ['django-loyiham.uz', 'www.django-loyiham.uz', '127.0.0.1']
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -122,10 +123,8 @@ STATIC_URL = 'static/'
 STATIC_ROOT = '/home/djangolo/django-loyiham.uz/django/staticfiles'
 STATICFILES_DIRS = '/home/djangolo/django-loyiham.uz/django/static'
 
+MEDIA_ROOT = '/home/djangolo/django-loyiham.uz/django/media'
 MEDIA_URL = 'media/'
-MEDIA_ROOT = '/home/djangolo/django-loyiham.uz/django/staticfiles'
-# STATIC_URL = 'static/'
-# MEDIA_URL = 'media/'
 # MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
