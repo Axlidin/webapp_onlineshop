@@ -1,0 +1,35 @@
+{% extends 'info/base.html' %}
+
+{% block content %}
+<div class="container">
+  <h2>Products</h2>
+  <div class="row">
+    {% for product in products %}
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="{{ product.photo }}" style="max-width: 100%; height: auto;" class="card-img-top img-fluid" alt="{{ product.productname }}">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <h5 class="card-title">{{ product.productname }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+          <p class="card-text">Narx: {{ product.price }} so'm</p>
+          <button class="btn btn-primary add-to-cart" data-product-id="{{ product.id }}">Qo'shish</button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const addToCartButtons = document.querySelectorAll('.add-to-cart');
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const productId = this.getAttribute('data-product-id');
+      // Simulate adding to cart, you can implement your logic here
+      alert(`Mahsulot savatga qo'shildi: ${productId}`);
+    });
+  });
+});
+</script>
+{% endblock %}
